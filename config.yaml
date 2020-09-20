@@ -1,0 +1,13 @@
+baseURL: https://ypiolet.fr
+languageCode: en-us
+title: ~ypiolet
+enableEmoji: true
+enableGitInfo: true
+
+# enableRobotsTXT: true
+# googleAnalytics: ""
+
+params:
+  author: Youenn Piolet
+  author-github: https://github.com/uZer
+  footer: Copyright test
