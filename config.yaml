@@ -14,11 +14,18 @@ params:
 
 menu:
   main:
-  - name: posts
+  - identifier: posts
+    title: misc articles
     url: /posts/
-  - name: projects
+  - identifier: projects
+    title: projects and occupations
     url: /projects/
-  - name: logs
+  - identifier: data
+    title: sharing knowledge
+    url: /data/
+  - identifier: logs
+    title: quantified self
     url: /logs/
-  - name: about
+  - identifier: about
+    title: whoami
     url: /pages/about/
