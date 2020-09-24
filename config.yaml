@@ -11,3 +11,14 @@ params:
   author: Youenn Piolet
   author-github: https://github.com/uZer
   footer: Copyright test
+
+menu:
+  main:
+  - name: posts
+    url: /posts/
+  - name: projects
+    url: /projects/
+  - name: logs
+    url: /logs/
+  - name: about
+    url: /pages/about/
