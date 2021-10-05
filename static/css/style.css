@@ -1,0 +1,214 @@
+/* GENERAL */
+@font-face {
+  font-family: 'Cascadia Code';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cascadia Code'), url('/Cascadia.woff') format('woff');
+}
+
+:root {
+  /* Fonts */
+  --font-content: "Manrope", arial;
+  --font-mono: "Cascadia Code", "Ubuntu Mono", monospace;
+
+  /* Special */
+  /* --background: #001a28; */
+  --background: #002e3a;
+  --foreground: #c7c7c5;
+
+  /* Colors */
+  --color0: #001019;
+  --color1: #a0a074;
+  --color2: #3ca98b;
+  --color3: #5ca6a0;
+  --color4: #a1acad;
+  --color5: #7295a9;
+  --color6: #4b87aa;
+  --color7: #001019;
+  --color8: #aa455c;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-content);
+  font-size: 15px;
+  line-height: 170%;
+  margin: 0;
+  padding: 0;
+}
+
+#main:before {
+  background: url("/img/TDMovieOut.9.jpg") top / cover;
+  content: '';
+  position: fixed;
+  left: 0; right: 0; top: 0; bottom: 0;
+  z-index: -1;
+  opacity: 0.05;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color2);
+}
+
+a:hover {
+  color: var(--color8);
+}
+
+strong {
+  color: white;
+}
+
+h1 {
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+/* TOPBAR */
+#topbar {
+  font-size: 14px;
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  /* border-bottom: 4px solid rgba(0, 0, 0, .1); */
+  align-items: stretch;
+  line-height: 140%;
+  /* background: var(--color7); */
+  font-family: "Cascadia Code", "Ubuntu Mono", monospace;
+}
+
+/* Boxes */
+#topbar > div {
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Content of the boxes */
+#topbar > div > * {
+  margin: 7px 0 7px 20px;
+}
+
+#topbar p {
+  margin: 0;
+  padding: 0;
+}
+
+#topbar h1 {
+  font-size: 26px;
+  padding: 0;
+  margin: 0;
+}
+
+.prompt:before {
+  content: "$ ";
+  color: var(--color1);
+}
+
+@media (max-width: 800px) {
+  .hideiftoosmall {
+    display: none !important;
+  }
+}
+
+/* BLINK */
+@keyframes blink {
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+@-webkit-keyframes blink {
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+.blink {
+  animation: blink 1s step-start 0s infinite;
+  -webkit-animation: blink 1.5s step-start 0s infinite;
+}
+
+.no-color {
+  color: unset;
+  /* text-decoration: underline solid; */
+}
+.no-color:hover {
+  color: unset;
+  /* text-decoration: underline dotted; */
+}
+
+/* TYPEWRITING */
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  animation: typing 1.2s steps(12) 1 normal, blink .5s step-end infinite alternate;
+  /* -webkit-animation: typing 1.3s steps(22), blink .5s step-end infinite alternate; */
+  white-space: nowrap;
+  border-right: 1ch solid;
+  box-sizing: border-box;
+}
+
+@keyframes typing {
+  from {
+    width: 3ch;
+  }
+  to {
+    width: 15ch;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* MAIN */
+#main {
+  /* background: rgba(0, 0, 0, .2); */
+  padding: 1ch;
+}
+
+/* ARTICLE */
+article {
+  /* margin: auto; */
+  /* background: rgba(0, 0, 0, .1); */
+  /* border-radius: 1ch; */
+  max-width: 82ch;
+}
+
+.post-header {
+  background: rgba(0, 0, 0, .2);
+  /* border-radius: 1ch; */
+  /* border-bottom-left-radius: 0; */
+  /* border-bottom-right-radius: 0; */
+  color: var(--color5);
+  margin: 5px 0 10px 0;
+  padding: 1ch;
+  max-width: 80ch;
+}
+
+.post-header h1:before {
+  content: "./";
+  color: var(--color1);
+}
+
+.post-content {
+  /* border-left: 1ch solid var(--color2); */
+  padding: 0 0ch;
+  padding: 1ch;
+  max-width: 80ch;
+}
+
+/* HIGHLIGHT */
+.highlight pre {
+  border-radius: 5px;
+  padding: 10px;
+}

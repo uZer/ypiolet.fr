@@ -3,9 +3,11 @@
   {{ partial "head.html" . }}
   <body>
     {{ partial "nav.html" . }}
-    <div id="content">
+    <div id="main">
       {{ block "main" . }}{{ end }}
     </div>
-    {{ partial "footer.html" . }}
+    <div id="footer">
+      {{ partial "footer.html" . }}
+    </div>
   </body>
 </html>

@@ -15,17 +15,31 @@ params:
 menu:
   main:
   - identifier: posts
-    title: misc articles
     url: /posts/
+    weight: 10
   - identifier: projects
-    title: projects and occupations
     url: /projects/
-  - identifier: data
-    title: sharing knowledge
+    weight: 50
+  - identifier: knowledge
     url: /data/
-  - identifier: logs
-    title: quantified self
-    url: /logs/
+    weight: 80
+  # - identifier: logs
+  #   url: /logs/
+  #   weight: 90
   - identifier: about
-    title: whoami
     url: /pages/about/
+    weight: 100
+
+markup:
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    style: solarized-dark
+    tabWidth: 2
