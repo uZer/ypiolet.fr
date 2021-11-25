@@ -1,7 +1,7 @@
 baseURL: https://ypiolet.fr
 languageCode: en-us
 title: ~ypiolet
-enableEmoji: true
+enableEmoji: false
 enableGitInfo: true
 
 # enableRobotsTXT: true
@@ -9,8 +9,44 @@ enableGitInfo: true
 
 params:
   author: Youenn Piolet
-  author-github: https://github.com/uZer
-  footer: Copyright test
+  repo: https://github.com/uZer/ypiolet.fr
+  socials:
+    code:
+      github: uZer
+    creative:
+      bandcamp: schematicwizard
+      instagram: schematicwizard
+      myspace93: 1040
+      pinterest: schematicwizard
+      soundcloud: schematic-wizard
+      spotify: _u.zer_
+      youtube: UCjKT4F2xTNyXIAFdFlUVEaQ
+    intercom:
+      facebook: schematicwizard
+      linktree: schematicwizard
+      mastodon: "merveilles.town/@schematicwizard"
+      twitter: schematicwizard
+    misc:
+      lastfm: Psyco-uZer
+      steam: schematicwizard
+    pro:
+      linkedin: ypiolet
+  socialurls:
+    bandcamp: "https://VALUE.bandcamp.com"
+    facebook: "https://facebook.com/VALUE"
+    github: "https://github.com/VALUE"
+    instagram: "https://instagram.com/VALUE"
+    lastfm: "https://www.last.fm/user/VALUE"
+    linkedin: "https://linkedin.com/in/VALUE"
+    linktree: "https://linktr.ee/VALUE"
+    mastodon: "https://VALUE"
+    myspace93: "https://myspace.windows93.net/index.php?id=VALUE"
+    pinterest: "https://pinterest.com/VALUE"
+    soundcloud: "https://soundcloud.com/VALUE"
+    spotify: "https://open.spotify.com/user/VALUE"
+    steam: "https://steamcommunity.com/id/VALUE"
+    twitter: "https://twitter.com/VALUE"
+    youtube: "https://youtube.com/channel/VALUE"
 
 menu:
   main:
@@ -43,3 +79,4 @@ markup:
     noClasses: true
     style: solarized-dark
     tabWidth: 2
+

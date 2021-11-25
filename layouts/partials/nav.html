@@ -18,11 +18,11 @@
       <nav>
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
-        <a class="topbar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}-active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Identifier }}</a>
+        <a class="topbar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}-active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Identifier }}/</a>
         {{ end }}
       </nav>
     </p>
-    <label class="typewriter prompt">browse {{ .Title }}</label>
+    <label class="typewriter prompt">open "{{ lower .Title }}"</label>
     </div>
   </div>
 </div>

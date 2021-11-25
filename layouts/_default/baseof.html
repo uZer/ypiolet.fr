@@ -4,6 +4,7 @@
   <body>
     {{ partial "nav.html" . }}
     <div id="main">
+      {{ partial "sidebar.html" . }}
       {{ block "main" . }}{{ end }}
     </div>
     <div id="footer">

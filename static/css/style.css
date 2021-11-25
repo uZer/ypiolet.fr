@@ -1,86 +1,87 @@
 /* GENERAL */
-@font-face {
-  font-family: 'Cascadia Code';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Cascadia Code'), url('/Cascadia.woff') format('woff');
-}
-
 :root {
   /* Fonts */
-  --font-content: "Manrope", arial;
-  --font-mono: "Cascadia Code", "Ubuntu Mono", monospace;
+  --font-content: "Roboto", sans-serif;
+  --font-title: "Roboto Condensed", sans-serif;
+  --font-mono: "Roboto Mono", monospace;
 
   /* Special */
-  /* --background: #001a28; */
-  --background: #002e3a;
-  --foreground: #c7c7c5;
 
   /* Colors */
-  --color0: #001019;
-  --color1: #a0a074;
-  --color2: #3ca98b;
-  --color3: #5ca6a0;
-  --color4: #a1acad;
-  --color5: #7295a9;
-  --color6: #4b87aa;
-  --color7: #001019;
-  --color8: #aa455c;
+  --background: #EEECEB;
+  --foreground: #1C1C1C;
+
+  --color1: #282828;
+  --color2: #404040;
+  --color3: #6389ab;
+  --color4: #c3791d;
+  --color5: #5e8f7c;
+  --color6: #F23A60;
+  --color7: #7e7e7e;
+  --color8: #d5d5d5;
+
+  /* --color5: #7BA897; */
+  /* --color4: #01738C; */
+
+  --color-prompt: var(--color7);
+  --color-cmd: var(--background);
+  --color-link: var(--color5);
+  --color-linkhover: var(--color6);
+  --color-strong: var(--color1);
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-content);
-  font-size: 15px;
-  line-height: 170%;
+  font-size: 14px;
+  line-height: 1.7;
   margin: 0;
   padding: 0;
 }
 
-#main:before {
-  background: url("/img/TDMovieOut.9.jpg") top / cover;
-  content: '';
-  position: fixed;
-  left: 0; right: 0; top: 0; bottom: 0;
-  z-index: -1;
-  opacity: 0.05;
-}
-
 a {
   text-decoration: none;
-  color: var(--color2);
+  color: var(--color-link);
 }
 
 a:hover {
-  color: var(--color8);
+  color: var(--color-linkhover);
 }
 
 strong {
-  color: white;
+  color: var(--color-strong);
 }
 
-h1 {
-  padding: 0 0 0 0;
-  margin: 0 0 0 0;
+h1,h2,h3,h4,h5 {
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
 }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1.0rem; }
 
 code {
+  font-size: 0.8rem;
   font-family: var(--font-mono);
-  font-size: 14px;
 }
 
 /* TOPBAR */
 #topbar {
-  font-size: 14px;
-  width: 100%;
+  align-items: stretch;
+  background: var(--foreground);
+  color: var(--color-cmd);
   display: inline-flex;
   flex-wrap: wrap;
-  /* border-bottom: 4px solid rgba(0, 0, 0, .1); */
-  align-items: stretch;
-  line-height: 140%;
-  /* background: var(--color7); */
-  font-family: "Cascadia Code", "Ubuntu Mono", monospace;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  width: 100%;
 }
 
 /* Boxes */
@@ -94,29 +95,21 @@ code {
 
 /* Content of the boxes */
 #topbar > div > * {
-  margin: 7px 0 7px 20px;
+  margin: 7px 0 7px 3ch;
 }
 
 #topbar p {
-  margin: 0;
+  margin: 3px 0 0 0;
   padding: 0;
 }
 
 #topbar h1 {
-  font-size: 26px;
-  padding: 0;
-  margin: 0;
+  font-size: 1.8rem;
 }
 
 .prompt:before {
   content: "$ ";
-  color: var(--color1);
-}
-
-@media (max-width: 800px) {
-  .hideiftoosmall {
-    display: none !important;
-  }
+  color: var(--color-prompt);
 }
 
 /* BLINK */
@@ -137,11 +130,9 @@ code {
 
 .no-color {
   color: unset;
-  /* text-decoration: underline solid; */
 }
 .no-color:hover {
   color: unset;
-  /* text-decoration: underline dotted; */
 }
 
 /* TYPEWRITING */
@@ -149,7 +140,6 @@ code {
   display: inline-block;
   overflow: hidden;
   animation: typing 1.2s steps(12) 1 normal, blink .5s step-end infinite alternate;
-  /* -webkit-animation: typing 1.3s steps(22), blink .5s step-end infinite alternate; */
   white-space: nowrap;
   border-right: 1ch solid;
   box-sizing: border-box;
@@ -172,39 +162,161 @@ code {
 
 /* MAIN */
 #main {
-  /* background: rgba(0, 0, 0, .2); */
-  padding: 1ch;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+}
+
+#main:before {
+  background: url("/img/TDMovieOut.9.jpg") top / cover;
+  content: '';
+  position: fixed;
+  left: 0; right: 0; top: 0; bottom: 0;
+  z-index: -1;
+  opacity: 0.05;
+}
+
+
+/* SIDEBAR */
+#sidebar {
+  justify-content: center;
+  background: var(--color1);
+  padding-bottom: 10px;
+  border: 1px solid var(--color2);
+  border-left: none;
+  border-right: 2px;
+  flex: 1;
+}
+
+#sidebar > h1,h2,h3,h4,h5 {
+  color: var(--background);
+  font-variant: small-caps;
+  padding: 0 0.5ch;
+}
+
+.socials {
+  font-size: .9rem;
+  font-family: var(--font-title);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.socials a {
+  height: 14px;
+  line-height: 14px !important;
+  padding: 4px 2ch 4px 1ch;
+}
+
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-items: start;
+}
+.social-button {
+  color: var(--background);
+}
+
+.social-button:active,
+.social-button:hover {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.social-button:before {
+  content: ".";
+  color: var(--color-prompt);
+}
+
+.social-category {
+  color: var(--color5);
+  align-items: stretch;
+  text-decoration: underline;
+  min-width: 7ch;
+}
+
+.social-category:hover {
+  color: var(--color5);
+}
+
+@media (max-width: 500px) {
+  .hideiftoosmall {
+    display: none !important;
+  }
+}
+@media (max-width: 100ch) {
+  .socials {
+    flex-direction: row;
+  }
+  .social-buttons {
+    flex-direction: row;
+  }
 }
 
 /* ARTICLE */
 article {
-  /* margin: auto; */
-  /* background: rgba(0, 0, 0, .1); */
-  /* border-radius: 1ch; */
-  max-width: 82ch;
+  /* max-width: 84ch; */
+  position: relative;
+  border: 1px solid var(--background);
+  flex-grow: 2
 }
 
 .post-header {
-  background: rgba(0, 0, 0, .2);
-  /* border-radius: 1ch; */
-  /* border-bottom-left-radius: 0; */
-  /* border-bottom-right-radius: 0; */
-  color: var(--color5);
-  margin: 5px 0 10px 0;
-  padding: 1ch;
-  max-width: 80ch;
+  padding: 1ch 2ch;
+  margin: 0;
+  line-height: 1.3;
+  font-family: var(--font-title);
+  background: var(--color8);
+  border-bottom: 1px solid var(--background);
 }
 
-.post-header h1:before {
-  content: "./";
-  color: var(--color1);
+.post-header h1:after {
+  content: ":";
+  color: var(--color-link);
 }
 
+.post-header .commit {
+  color: var(--color7);
+}
+
+.post-header .githubfile {
+  font-size: 0.95rem;
+}
 .post-content {
-  /* border-left: 1ch solid var(--color2); */
-  padding: 0 0ch;
-  padding: 1ch;
-  max-width: 80ch;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding: 0 2ch;
+  max-width: 100ch;
+  text-align: justify;
+}
+
+.post-content h1 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-content p {
+  margin: 0.9rem 0 0.5rem 0;
+}
+
+.post-content blockquote {
+  margin: 10px 0 10px 0;
+  padding: 2px 10px;
+  border-left: var(--color8) solid 4px;
+  color: var(--color7);
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.post-content blockquote p {
+  margin: 0;
 }
 
 /* HIGHLIGHT */

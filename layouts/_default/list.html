@@ -1,10 +1,17 @@
 {{ define "main" }}
-  <ul>
-    {{ range .Pages.ByDate.Reverse }}
-    <code>
-      -rw-r--r-- {{ .Date.Format "2006-01-02" }}
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a><br>
-    </code>
-    {{ end }}
-  </ul>
+<article>
+  <header class="post-header">
+    <h1>{{ lower .Title }}</h1>
+  </header>
+  <div class="post-content">
+    <ul>
+      {{ range .Pages.ByDate.Reverse }}
+      <code>
+        -rw-r--r-- {{ .Date.Format "2006-01-02" }}
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a><br>
+      </code>
+      {{ end }}
+    </ul>
+  </div>
+</article>
 {{ end }}

@@ -1,0 +1,18 @@
+<div id="sidebar">
+  <h2>href</h2>
+  {{ range $category, $content := $.Site.Params.socials }}
+  <div class="socials {{ $category }}">
+    <a class="social-category {{ $category }}" title="{{ $category }}">
+      <span class="fa fa-{{ $category }}">{{ $category }}</span>
+    </a>
+    <div class="social-buttons">
+      {{ range $key, $value := $content }}
+      <a class="social-button {{ $key }}" title="{{ $key }}"
+         href="{{ replace (index $.Site.Params.socialurls $key) "VALUE" $value }}">
+        <span class="fa fa-{{ $key }}">{{ $key }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+</div>
