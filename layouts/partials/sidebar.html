@@ -7,8 +7,9 @@
     </a>
     <div class="social-buttons">
       {{ range $key, $value := $content }}
-      <a class="social-button {{ $key }}" title="{{ $key }}"
-         href="{{ replace (index $.Site.Params.socialurls $key) "VALUE" $value }}">
+      <a class="social-button {{ $key }}"
+         href="{{ replace (index $.Site.Params.socialurls $key) "VALUE" $value }}"
+          title="{{ $key }}" target="_blank">
         <span class="fa fa-{{ $key }}">{{ $key }}</span>
       </a>
       {{ end }}
