@@ -1,4 +1,4 @@
-baseURL: https://ypiolet.fr
+baseURL: /
 languageCode: en-us
 title: ~ypiolet
 enableEmoji: false
@@ -79,4 +79,3 @@ markup:
     noClasses: true
     style: solarized-dark
     tabWidth: 2
-
